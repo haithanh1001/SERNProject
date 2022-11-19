@@ -1,12 +1,21 @@
-let getHomePage =  (req,res) =>{
-    return res.render('index');
-}
+let db = require("../models/index");
 
-let getAboutPage = (req,res) =>{
-    return res.render('test/about');
-}
+let getHomePage = async (req, res) => {
+  try {
+    let data = await db.User.findAll();
+    return res.render("index", {
+      data: JSON.stringify(data),
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-module.exports ={
-    getHomePage,
-    getAboutPage
-}
+let getAboutPage = (req, res) => {
+  return res.render("test/about");
+};
+
+module.exports = {
+  getHomePage,
+  getAboutPage,
+};

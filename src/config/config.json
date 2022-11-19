@@ -5,7 +5,8 @@
     "database": "testdatabase",
     "host": "localhost",
     "dialect": "mysql",
-    "port": 31306
+    "port": 31306,
+    "logging": false
   },
   "test": {
     "username": "root",

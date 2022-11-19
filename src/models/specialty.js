@@ -2,7 +2,7 @@
 const { BOOLEAN } = require("sequelize");
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Allcode extends Model {
+  class Specialty extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -12,17 +12,15 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Allcode.init(
+  Specialty.init(
     {
-      key: DataTypes.STRING,
-      type: DataTypes.STRING,
-      valueEn: DataTypes.STRING,
-      valueVi: DataTypes.STRING,
+      description: DataTypes.TEXT,
+      image: DataTypes.STRING,
     },
     {
       sequelize,
-      modelName: "Allcode",
+      modelName: "Specialty",
     }
   );
-  return Allcode;
+  return Specialty;
 };
